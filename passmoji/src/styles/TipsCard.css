@@ -1,0 +1,41 @@
+/* Tips Card */
+.tips-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 435.99px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #F3F4F6;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* Heading */
+.tips-heading {
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: #000;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Tips List */
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-item {
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #4B5563;
+  gap: 10px;
+  padding: 8px 0;
+}
