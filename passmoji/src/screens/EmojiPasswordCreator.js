@@ -8,16 +8,22 @@ const calculatePasswordStrength = (value = "") => {
   let score = 0;
 
   // 简单的密码强度评分逻辑
-  if (value.length > 8) score += 25;
-  if (/[A-Z]/.test(value)) score += 25;
-  if (/[0-9]/.test(value)) score += 25;
+  if (value.length > 8) score += 20;
+  if (/[A-Z]/.test(value)) score += 20;
+  if (/[0-9]/.test(value)) score += 20;
   // 如果你想让“表情符号”加分，可以加一个正则检测 \p{Extended_Pictographic}
-  if (/[^A-Za-z0-9]/.test(value)) score += 25;
+  if (/[^A-Za-z0-9]/.test(value)) score += 20;
+
+  if (/\p{Extended_Pictographic}/u.test(value)) {
+    score += 20;
+  }
+
+  const finalScore = Math.min(score, 100);
 
   return {
     score,
     label: score < 50 ? "Weak" : score < 75 ? "Medium" : "Strong",
-    percentage: Math.min(score, 100),
+    percentage: finalScore,
   };
 };
 
@@ -174,7 +180,7 @@ function EmojiPasswordCreator() {
         <div className="strength-bar-wrapper">
           <div className="emoji-password-strength-bar">
             <div
-              className={`emoji-password-strength-fill ${strength.label.toUpperCase()}`}
+              className={`emoji-password-strength-fill ${strength.label.toLowerCase()}`}
               style={{ width: `${strength.percentage}%` }}
             ></div>
           </div>
