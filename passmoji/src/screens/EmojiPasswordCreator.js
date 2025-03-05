@@ -208,7 +208,7 @@ function EmojiPasswordCreator() {
         <div className="strength-bar-wrapper">
           <div className="emoji-password-strength-bar">
             <div
-              className={`emoji-password-strength-fill ${strength.label.toUpperCase()}`}
+              className={`emoji-password-strength-fill ${strength.label.toLowerCase()}`}
               style={{ width: `${strength.percentage}%` }}
             ></div>
           </div>
