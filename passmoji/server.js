@@ -11,6 +11,14 @@ app.use(cors({
   origin: "*", // or specify your frontend domain like "http://localhost:3000"
 }));
 
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+// app.listen(9000);
+
 // Built-in body parsing in modern Express:
 app.use(express.json());
 
