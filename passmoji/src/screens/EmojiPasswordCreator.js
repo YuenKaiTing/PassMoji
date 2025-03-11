@@ -70,8 +70,8 @@ function EmojiPasswordCreator() {
 
     try {
       const endpoint = isLoginMode
-        ? "http://localhost:"+ PORT + "/api/login"
-        : "http://localhost:"+ PORT + "/api/register";
+        ? "http://localhost:"+ 10000 + "/api/login"
+        : "http://localhost:"+ 10000 + "/api/register";
 
       const response = await fetch(endpoint, {
         method: "POST",
