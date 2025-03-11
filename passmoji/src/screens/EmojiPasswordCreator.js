@@ -3,6 +3,9 @@ import BenefitsCard from "../components/BenefitsCard";
 import TipsCard from "../components/TipsCard";
 import EmojiPickerComponent from "../components/PickEmoji";
 import "../styles/EmojiPasswordCreator.css";
+require('dotenv').config();
+
+const PORT = process.env.PORT;
 
 const calculatePasswordStrength = (value = "") => {
   let score = 0;
@@ -67,8 +70,8 @@ function EmojiPasswordCreator() {
 
     try {
       const endpoint = isLoginMode
-        ? "http://localhost:3001/api/login"
-        : "http://localhost:3001/api/register";
+        ? "http://localhost:"+ PORT + "/api/login"
+        : "http://localhost:"+ PORT + "/api/register";
 
       const response = await fetch(endpoint, {
         method: "POST",
