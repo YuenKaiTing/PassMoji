@@ -3,9 +3,9 @@ import BenefitsCard from "../components/BenefitsCard";
 import TipsCard from "../components/TipsCard";
 import EmojiPickerComponent from "../components/PickEmoji";
 import "../styles/EmojiPasswordCreator.css";
-require('dotenv').config();
+// require('dotenv').config();
 
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 
 const calculatePasswordStrength = (value = "") => {
   let score = 0;
