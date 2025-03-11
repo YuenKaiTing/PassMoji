@@ -3,6 +3,7 @@ const express = require("express");
 const argon2 = require("argon2");
 const cors = require("cors");
 const path = require("path");
+require('dotenv').config();
 
 const app = express();
 
@@ -96,7 +97,7 @@ app.post("/api/login", async (req, res) => {
 });
 
 // Start server
-const PORT = 3001;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
